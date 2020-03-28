@@ -2,9 +2,6 @@
 const express = require('express');
 const router = express.Router();
 
-var expressSanitizer = require('express-sanitizer');
-app.use(expressSanitizer());
-
 const push = require('./push')
 
 

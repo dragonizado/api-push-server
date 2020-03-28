@@ -4,12 +4,17 @@ const path = require('path');
 
 const bodyParser = require('body-parser');
 
+var expressSanitizer = require('express-sanitizer');
+
 const app = express();
+
+
 
 const publicPath = path.resolve(__dirname, '../public');
 const port = process.env.PORT || 3000;
 
 
+app.use(expressSanitizer());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
