@@ -1,6 +1,6 @@
 const fs = require('fs');
 const urlsafeBase64 = require('urlsafe-base64');
-const vapid = require('./vapid.json');
+const vapid = process.env.VAPID_KEYS;
 const webpush = require('web-push');
 
 webpush.setVapidDetails(
