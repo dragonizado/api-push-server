@@ -2,6 +2,9 @@
 const express = require('express');
 const router = express.Router();
 
+var expressSanitizer = require('express-sanitizer');
+app.use(expressSanitizer());
+
 const push = require('./push')
 
 
@@ -27,8 +30,10 @@ router.get('/', function (req, res) {
 // Post mensajes
 router.post('/', function (req, res) {
 
+  let otrmensaje = req.sanitize(req.body.mensaje)
+
   const mensaje = {
-    mensaje : req.body.mensaje,
+    mensaje : otrmensaje,
     user: req.body.user
   }
 
@@ -39,7 +44,7 @@ const postN = {
   }
 
   mensajes.push(mensaje);
-  
+
   push.sendPush(postN)
 
   res.json({
