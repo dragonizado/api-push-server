@@ -32,8 +32,15 @@ router.post('/', function (req, res) {
     user: req.body.user
   }
 
+const postN = {
+    titulo: 'Nuevo mensaje',
+    cuerpo: req.body.mensaje,
+    usuario: req.body.user,
+  }
 
   mensajes.push(mensaje);
+  
+  push.sendPush(post)
 
   res.json({
     ok:true,
