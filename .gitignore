@@ -5,7 +5,7 @@ npm-debug.log
 package-lock.json
 
 node_modules/
-public/
+server/vapid.json
 .DS_Store
 .idea/
 *.iml
