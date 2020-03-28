@@ -1,12 +1,14 @@
 const fs = require('fs');
 const urlsafeBase64 = require('urlsafe-base64');
-const vapid = process.env.VAPID_KEYS;
+
+const vpublic_key = process.env.VPUBLIC_KEY;
+const vprivate_key = process.env.VPRIVATE_KEY;
 const webpush = require('web-push');
 
 webpush.setVapidDetails(
     'mailto:jesusfrancisco@braincoding.co',
-    vapid.publicKey,
-    vapid.privateKey
+    vpublic_key,
+    vprivate_key
 );
 
 let suscripciones = require('./subs-db.json');
