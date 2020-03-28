@@ -14,7 +14,7 @@ webpush.setVapidDetails(
 let suscripciones = require('./subs-db.json');
 
 module.exports.getKey = ()=>{
-    return urlsafeBase64.decode(vapid.publicKey)
+    return urlsafeBase64.decode(vpublic_key)
 }
 module.exports.addSubscription = (suscription)=>{
     suscripciones.push(suscription);
