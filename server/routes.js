@@ -40,7 +40,7 @@ const postN = {
 
   mensajes.push(mensaje);
   
-  push.sendPush(post)
+  push.sendPush(postN)
 
   res.json({
     ok:true,
